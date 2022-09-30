@@ -24,4 +24,4 @@ function createBookCardElements() {
     });
 }
 
-displayBookObjects();
+createBookCardElements();
