@@ -31,6 +31,30 @@ h1 {
 
 main {
     padding: 36px;
+
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    
+    background: none;
+    color: var(--oldRose);
+
+    border: 4px solid var(--frenchLilac);
+    border-radius: 10px;
+    
+    padding: 16px 28px;
+    transition: all 0.3s linear;
+}
+
+button:hover {
+    color: var(--blackJungleGreen);
+    background-color: var(--frenchLilac);
 }
 
 .library {
