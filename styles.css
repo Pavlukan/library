@@ -31,7 +31,9 @@ h1 {
 
 main {
     padding: 36px;
+}
 
+.library {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 32px;

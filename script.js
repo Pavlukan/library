@@ -1,4 +1,4 @@
-const library = document.querySelector("main");
+const library = document.querySelector(".library");
 
 let myLibrary = [];
 
