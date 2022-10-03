@@ -1,4 +1,8 @@
 const library = document.querySelector(".library");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector("#overlay");
+const openFormBtn = document.querySelector(".open-form-button");
+const closeFormBtn = document.querySelector(".close-button");
 
 let myLibrary = [];
 
@@ -25,3 +29,17 @@ function createBookCardElements() {
 }
 
 createBookCardElements();
+
+function openForm() {
+    modal.classList.add("active");
+    overlay.classList.add("active");
+}
+
+function closeForm() {
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
+}
+
+openFormBtn.addEventListener("click", openForm);
+closeFormBtn.addEventListener("click", closeForm);
+overlay.addEventListener("click", closeForm);
