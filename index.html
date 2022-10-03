@@ -21,7 +21,7 @@
         <div class="library">
 
         </div>
-        <div class="modal" id="modal">
+        <div class="modal active" id="modal">
             <div class="modal-top">
                 <div class="title">Add a book</div>
                 <button type="button" class="close-button">&times;</button>
@@ -45,12 +45,14 @@
                             <label for="status">Read</label>
                             <input type="checkbox" id="status" name="status" required>
                         </li>
+                        <li>
+                            <button class="submit-button">Add</button>
+                        </li>
                     </ul>
                 </form>
             </div>
-
         </div>
-        <div id="overlay"></div>
+        <div id="overlay" class="active"></div>
     </main>
 </body>
 </html>
