@@ -69,13 +69,41 @@ button {
 }
 
 .book-card {
+    display: flex;
+    flex-direction: column;
+
     height: 300px;
+
+    padding: 16px;
+    gap: 16px;
     
     background-color: var(--frenchLilac);
     
     border-radius: 16px;
 
     box-shadow: 0px 0px 6px 5px #0000009a;
+}
+
+.book-card p {
+    margin: 0;
+        
+    color: var(--blackJungleGreen);
+}
+
+.book-card .book-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.book-card .book-author {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.book-card .book-pages {
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 
 ul {
@@ -150,7 +178,6 @@ ul {
 .modal-body {
     padding: 16px 24px;
 }
-
 
 li {
     display: flex;
