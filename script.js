@@ -23,9 +23,23 @@ function addBookToLibrary() {
 
 function createBookCardElement() {
     const bookCard = document.createElement("div");
+    createParagraphElements(bookCard);
     bookCard.classList.add("book-card");
     library.appendChild(bookCard);
 }
+
+function createParagraphElements(element) {
+    const paragraphTitle = document.createElement("p");
+    paragraphTitle.classList.add("book-title");
+    paragraphTitle.textContent = title.value;
+    const paragraphAuthor = document.createElement("p");
+    paragraphAuthor.classList.add("book-author");
+    paragraphAuthor.textContent = author.value;
+    const paragraphPages = document.createElement("p");
+    paragraphPages.classList.add("book-pages");
+    paragraphPages.textContent = pages.value;
+    element.append(paragraphTitle, paragraphAuthor, paragraphPages);
+} 
 
 function openForm() {
     modal.classList.add("active");
