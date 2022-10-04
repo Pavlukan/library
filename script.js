@@ -14,12 +14,9 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
-function addBookToLibrary(title, author, pages, isRead) {
-    return myLibrary.push(new Book(title, author, pages, isRead));
+function addBookToLibrary() {
+    return myLibrary.push(new Book(title.value, author.value, pages.value, isRead.checked));
 }
-
-addBookToLibrary("Sapiens: A Brief History of Humankind", "Yuval Noah Harari", 443, "read");
-addBookToLibrary("A Short History of Nearly Everything", "Bill Bryson", 544, "read");
 
 function createBookCardElements() {
     myLibrary.forEach(book => {
@@ -44,4 +41,4 @@ function closeForm() {
 openFormBtn.addEventListener("click", openForm);
 closeFormBtn.addEventListener("click", closeForm);
 overlay.addEventListener("click", closeForm);
-
+submitFormBtn.addEventListener("click", addBookToLibrary);
