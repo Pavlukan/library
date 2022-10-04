@@ -34,10 +34,10 @@ function createParagraphElements(element) {
     paragraphTitle.textContent = title.value;
     const paragraphAuthor = document.createElement("p");
     paragraphAuthor.classList.add("book-author");
-    paragraphAuthor.textContent = author.value;
+    paragraphAuthor.textContent = `Written by ${author.value}`;
     const paragraphPages = document.createElement("p");
     paragraphPages.classList.add("book-pages");
-    paragraphPages.textContent = pages.value;
+    paragraphPages.textContent = `Page count: ${pages.value}`;
     element.append(paragraphTitle, paragraphAuthor, paragraphPages);
 } 
 
