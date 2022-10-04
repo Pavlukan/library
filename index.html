@@ -27,7 +27,7 @@
                 <button type="button" class="close-button">&times;</button>
             </div>
             <div class="modal-body">
-                <form>
+                <form onsubmit="return false">
                     <ul>
                         <li>
                             <label for="title">Title: </label>
@@ -46,7 +46,7 @@
                             <input type="checkbox" id="isRead" name="isRead" required>
                         </li>
                         <li>
-                            <button class="submit-button" type="button">Add</button>
+                            <button class="submit-button" type="submit">Add</button>
                         </li>
                     </ul>
                 </form>
