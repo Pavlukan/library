@@ -17,18 +17,15 @@ function Book(title, author, pages, isRead) {
 function addBookToLibrary() {
     if (title.value === "" || author.value === "" || pages.value === "") return 
     myLibrary.push(new Book(title.value, author.value, pages.value, isRead.checked));
+    createBookCardElement();
     closeForm();
 }
 
-function createBookCardElements() {
-    myLibrary.forEach(book => {
-        const bookCard = document.createElement("div");
-        bookCard.classList.add("book-card");
-        library.appendChild(bookCard);
-    });
+function createBookCardElement() {
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("book-card");
+    library.appendChild(bookCard);
 }
-
-createBookCardElements();
 
 function openForm() {
     modal.classList.add("active");
