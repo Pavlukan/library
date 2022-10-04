@@ -16,7 +16,8 @@ function Book(title, author, pages, isRead) {
 
 function addBookToLibrary() {
     if (title.value === "" || author.value === "" || pages.value === "") return 
-    return myLibrary.push(new Book(title.value, author.value, pages.value, isRead.checked));
+    myLibrary.push(new Book(title.value, author.value, pages.value, isRead.checked));
+    closeForm();
 }
 
 function createBookCardElements() {
