@@ -3,6 +3,7 @@
     --frenchLilac: #785589;
     --oldRose: #AC7B7D;
     --blackCoffee: #2A1A1F;
+    --bloodRed: #880808;
 }
 
 body {
@@ -104,6 +105,26 @@ button {
 .book-card .book-pages {
     font-size: 1.4rem;
     font-weight: 400;
+}
+
+.book-card button {
+    background: none;
+    outline: none;
+    
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    color: var(--bloodRed);
+
+    border: 3px solid var(--bloodRed);
+    border-radius: 12px;
+
+    transition: all 0.3s linear
+}
+
+.book-card button:hover {
+    background-color: var(--bloodRed);
+    color: var(--blackJungleGreen);
 }
 
 ul {
