@@ -24,6 +24,7 @@ function addBookToLibrary() {
 function createBookCardElement() {
     const bookCard = document.createElement("div");
     createParagraphElements(bookCard);
+    createRemoveButtonElement(bookCard);
     bookCard.classList.add("book-card");
     library.appendChild(bookCard);
 }
@@ -40,6 +41,12 @@ function createParagraphElements(element) {
     paragraphPages.textContent = `Page count: ${pages.value}`;
     element.append(paragraphTitle, paragraphAuthor, paragraphPages);
 } 
+
+function createRemoveButtonElement(element) {
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    element.appendChild(removeBtn);
+}
 
 function openForm() {
     modal.classList.add("active");
