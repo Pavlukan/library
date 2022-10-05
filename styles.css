@@ -107,7 +107,7 @@ button {
     font-weight: 400;
 }
 
-.book-card button {
+.remove-button {
     background: none;
     outline: none;
     
@@ -122,7 +122,7 @@ button {
     transition: all 0.3s linear
 }
 
-.book-card button:hover {
+.remove-button:hover {
     background-color: var(--bloodRed);
     color: var(--blackJungleGreen);
 }
