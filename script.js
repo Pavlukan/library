@@ -44,6 +44,8 @@ function createParagraphElements(element) {
 
 function createRemoveButtonElement(element) {
     const removeBtn = document.createElement("button");
+    removeBtn.setAttribute("type", "button");
+    removeBtn.classList.add("remove-button");
     removeBtn.textContent = "Remove";
     element.appendChild(removeBtn);
 }
