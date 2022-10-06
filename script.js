@@ -15,17 +15,21 @@ function Book(title, author, pages, isRead) {
 }
 
 function addBookToLibrary() {
-    if (title.value === "" || author.value === "" || pages.value === "") return 
+    if (title.value === "" || author.value === "" || pages.value === "" || parseInt(pages.value) > 17868) return 
     myLibrary.push(new Book(title.value, author.value, pages.value, isRead.checked));
+
     createBookCardElement();
     closeForm();
 }
 
 function createBookCardElement() {
     const bookCard = document.createElement("div");
+
     createParagraphElements(bookCard);
     createRemoveButtonElement(bookCard);
+
     bookCard.classList.add("book-card");
+    
     library.appendChild(bookCard);
 }
 
@@ -50,6 +54,7 @@ function createRemoveButtonElement(element) {
 
     removeBtn.setAttribute("type", "button");
     removeBtn.classList.add("remove-button");
+
     removeBtn.addEventListener("click", removeBookCard)
 
     removeBtn.textContent = "Remove";
