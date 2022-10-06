@@ -33,21 +33,32 @@ function createParagraphElements(element) {
     const paragraphTitle = document.createElement("p");
     paragraphTitle.classList.add("book-title");
     paragraphTitle.textContent = title.value;
+
     const paragraphAuthor = document.createElement("p");
     paragraphAuthor.classList.add("book-author");
     paragraphAuthor.textContent = `Written by ${author.value}`;
+
     const paragraphPages = document.createElement("p");
     paragraphPages.classList.add("book-pages");
     paragraphPages.textContent = `Page count: ${pages.value}`;
+
     element.append(paragraphTitle, paragraphAuthor, paragraphPages);
 } 
 
 function createRemoveButtonElement(element) {
     const removeBtn = document.createElement("button");
+
     removeBtn.setAttribute("type", "button");
     removeBtn.classList.add("remove-button");
+    removeBtn.addEventListener("click", removeBookCard)
+
     removeBtn.textContent = "Remove";
     element.appendChild(removeBtn);
+}
+
+function removeBookCard(event) {
+    const currentBookCard = event.target.parentElement;
+    currentBookCard.remove();
 }
 
 function openForm() {
