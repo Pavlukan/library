@@ -47,7 +47,11 @@ function createParagraphElements(element) {
     paragraphPages.classList.add("book-pages");
     paragraphPages.textContent = `Page count: ${pages.value}`;
 
-    element.append(paragraphTitle, paragraphAuthor, paragraphPages);
+    const paragraphStatus = document.createElement("p");
+    paragraphStatus.classList.add("book-status");
+    paragraphStatus.textContent = `Book status: ${isRead.checked}`
+
+    element.append(paragraphTitle, paragraphAuthor, paragraphPages, paragraphStatus);
 } 
 
 function createRemoveButtonElement(element) {
