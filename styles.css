@@ -107,6 +107,11 @@ button {
     font-weight: 400;
 }
 
+.book-card .book-status {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
 .remove-button {
     background: none;
     outline: none;
