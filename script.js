@@ -26,6 +26,7 @@ function createBookCardElement() {
     const bookCard = document.createElement("div");
 
     createParagraphElements(bookCard);
+    createChangeStatusButtonElement(bookCard);
     createRemoveButtonElement(bookCard);
 
     bookCard.classList.add("book-card");
@@ -66,6 +67,17 @@ function removeBookCard(event) {
     currentBookCard.remove();
 }
 
+function createChangeStatusButtonElement(element) {
+    const isReadBtn = document.createElement("button");
+
+    isReadBtn.setAttribute("type", "button");
+    isReadBtn.classList.add("status-button");
+
+    isReadBtn.textContent = "Change status";
+    element.append(isReadBtn);
+}
+
+
 function openForm() {
     modal.classList.add("active");
     overlay.classList.add("active");
@@ -75,6 +87,7 @@ function closeForm() {
     modal.classList.remove("active");
     overlay.classList.remove("active");
 }
+
 
 openFormBtn.addEventListener("click", openForm);
 closeFormBtn.addEventListener("click", closeForm);
