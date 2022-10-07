@@ -99,19 +99,16 @@ button {
     overflow-wrap:break-word;
 }
 
-.book-card .book-author {
+.book-card .book-author, .book-card .book-pages, .book-card .book-status {
     font-size: 1.3rem;
     font-weight: 400;
+}
+
+.book-card .book-author {
     font-style: italic;
 }
 
-.book-card .book-pages {
-    font-size: 1.3rem;
-    font-weight: 400;
-}
-
 .book-card .book-status {
-    font-size: 1.3rem;
     font-weight: 500;
 }
 
