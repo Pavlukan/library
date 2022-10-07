@@ -4,6 +4,7 @@
     --oldRose: #AC7B7D;
     --blackCoffee: #2A1A1F;
     --bloodRed: #880808;
+    --darkGreen: #003D00;
 }
 
 body {
@@ -112,23 +113,39 @@ button {
     font-weight: 500;
 }
 
-.remove-button {
+.status-button, .remove-button {
     background: none;
     outline: none;
-    
+
     font-size: 1.4rem;
     font-weight: 600;
 
+    border-radius: 12px;
+
+    transition: all 0.3s ease-in;
+}
+
+.status-button {
+    color: var(--darkGreen);
+    
+    border: 3px solid var(--darkGreen);
+}
+
+.status-button:hover {
+    background-color: var(--darkGreen);
+}
+
+.remove-button {
     color: var(--bloodRed);
 
     border: 3px solid var(--bloodRed);
-    border-radius: 12px;
-
-    transition: all 0.3s linear
 }
 
 .remove-button:hover {
     background-color: var(--bloodRed);
+}
+
+.status-button:hover, .remove-button:hover {
     color: var(--blackJungleGreen);
 }
 
