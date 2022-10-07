@@ -49,7 +49,7 @@ function createParagraphElements(element) {
 
     const paragraphStatus = document.createElement("p");
     paragraphStatus.classList.add("book-status");
-    paragraphStatus.textContent = `Book status: ${isRead.checked}`
+    paragraphStatus.textContent = `Book status: ${renameValuesOfBookStatus()}`
 
     element.append(paragraphTitle, paragraphAuthor, paragraphPages, paragraphStatus);
 } 
@@ -81,6 +81,10 @@ function createChangeStatusButtonElement(element) {
     element.append(isReadBtn);
 }
 
+function renameValuesOfBookStatus() {
+    if (isRead.checked) return "Read";
+    return "Not read";
+}
 
 function openForm() {
     modal.classList.add("active");
