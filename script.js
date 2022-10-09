@@ -109,3 +109,10 @@ openFormBtn.addEventListener("click", openForm);
 closeFormBtn.addEventListener("click", closeForm);
 overlay.addEventListener("click", closeForm);
 submitFormBtn.addEventListener("click", addBookToLibrary);
+
+// Keyboard support
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && modal.classList.contains("active") && overlay.classList.contains("active")) {
+        closeForm();
+    }
+});
