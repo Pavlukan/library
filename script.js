@@ -30,6 +30,7 @@ function createBookCardElement() {
     createRemoveButtonElement(bookCard);
 
     bookCard.classList.add("book-card");
+    bookCard.setAttribute("data-index", `${myLibrary.length - 1}`);
     
     library.appendChild(bookCard);
 }
@@ -68,6 +69,9 @@ function createRemoveButtonElement(element) {
 
 function removeBookCard(event) {
     const currentBookCard = event.target.parentElement;
+    const index = currentBookCard.getAttribute("data-index");
+
+    myLibrary.splice(+index, 1);
     currentBookCard.remove();
 }
 
