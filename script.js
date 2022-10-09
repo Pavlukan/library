@@ -22,6 +22,7 @@ function addBookToLibrary() {
     closeForm();
 }
 
+// Functions responsible for creation of certain elements
 function createBookCardElement() {
     const bookCard = document.createElement("div");
 
@@ -67,14 +68,6 @@ function createRemoveButtonElement(element) {
     element.appendChild(removeBtn);
 }
 
-function removeBookCard(event) {
-    const currentBookCard = event.target.parentElement;
-    const index = currentBookCard.getAttribute("data-index");
-
-    myLibrary.splice(+index, 1);
-    currentBookCard.remove();
-}
-
 function createChangeStatusButtonElement(element) {
     const isReadBtn = document.createElement("button");
 
@@ -85,11 +78,17 @@ function createChangeStatusButtonElement(element) {
     element.append(isReadBtn);
 }
 
-function renameValuesOfBookStatus() {
-    if (isRead.checked) return "Read";
-    return "Not read";
+// The function which removes a particular object from myLibrary array and removes 
+// a particular book card visually
+function removeBookCard(event) {
+    const currentBookCard = event.target.parentElement;
+    const index = currentBookCard.getAttribute("data-index");
+
+    myLibrary.splice(+index, 1);
+    currentBookCard.remove();
 }
 
+// Functions responsible for opening and closing of the modal / form
 function openForm() {
     modal.classList.add("active");
     overlay.classList.add("active");
@@ -100,7 +99,12 @@ function closeForm() {
     overlay.classList.remove("active");
 }
 
+function renameValuesOfBookStatus() {
+    if (isRead.checked) return "Read";
+    return "Not read";
+}
 
+// Add event listeners for buttons
 openFormBtn.addEventListener("click", openForm);
 closeFormBtn.addEventListener("click", closeForm);
 overlay.addEventListener("click", closeForm);
