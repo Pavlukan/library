@@ -4,6 +4,7 @@ const overlay = document.querySelector("#overlay");
 const openFormBtn = document.querySelector(".open-form-button");
 const closeFormBtn = document.querySelector(".close-button");
 const submitFormBtn = document.querySelector(".submit-button");
+const form = document.querySelector("form");
 
 let myLibrary = [];
 
@@ -20,6 +21,7 @@ function addBookToLibrary() {
 
     createBookCardElement();
     closeForm();
+    form.reset();
 }
 
 // Functions responsible for creation of certain elements
