@@ -76,6 +76,8 @@ function createChangeStatusButtonElement(element) {
     isReadBtn.setAttribute("type", "button");
     isReadBtn.classList.add("status-button");
 
+    isReadBtn.addEventListener("click", changeBookStatus)
+
     isReadBtn.textContent = "Change status";
     element.append(isReadBtn);
 }
@@ -88,6 +90,18 @@ function removeBookCard(event) {
 
     myLibrary.splice(+index, 1);
     currentBookCard.remove();
+}
+
+
+// Function which changes the status of a particular book object.
+function changeBookStatus(event) {
+    const currentBookCard = event.target.parentElement;
+    const index = currentBookCard.getAttribute("data-index");
+
+    myLibrary[index].changeStatus();
+
+    const currentStatusParagraphElement = event.target.parentElement.childNodes[3];
+    currentStatusParagraphElement.textContent = `Book status: ${myLibrary[index].isRead}`;
 }
 
 // Functions responsible for opening and closing of the modal / form
@@ -104,6 +118,16 @@ function closeForm() {
 function renameValuesOfBookStatus() {
     if (isRead.checked) return "Read";
     return "Not read";
+}
+
+// Function on the prototype of every book object which changes the status of any book object
+Book.prototype.changeStatus = function() {
+    if (this.isRead === true) {
+        this.isRead = false;
+    }
+    else {
+        this.isRead = true;
+    }
 }
 
 // Add event listeners for buttons
