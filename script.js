@@ -98,10 +98,10 @@ function changeBookStatus(event) {
     const currentBookCard = event.target.parentElement;
     const index = currentBookCard.getAttribute("data-index");
 
-    myLibrary[index].changeStatus();
+    myLibrary[+index].changeStatus();
 
     const currentStatusParagraphElement = event.target.parentElement.childNodes[3];
-    currentStatusParagraphElement.textContent = `Book status: ${myLibrary[index].isRead}`;
+    currentStatusParagraphElement.textContent = `Book status: ${renameBookStatusValue(myLibrary[+index])}`;
 }
 
 // Functions responsible for opening and closing of the modal / form
@@ -115,9 +115,15 @@ function closeForm() {
     overlay.classList.remove("active");
 }
 
+// Functions responsible for renaming values of false and true into Not Read and Read
 function renameValuesOfBookStatus() {
     if (isRead.checked) return "Read";
     return "Not read";
+}
+
+function renameBookStatusValue(bookObject) {
+    if (bookObject.isRead === true) return "Read"
+    return "Not read"
 }
 
 // Function on the prototype of every book object which changes the status of any book object
