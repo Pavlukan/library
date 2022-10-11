@@ -1,6 +1,8 @@
 # library
 A library web page which allows users to add books that they have read or haven't read.
 
+Live preview: https://pavlukan.github.io/library/
+
 ## Design
 In this project I used six primary colours, which I had defined in the :root pseudo class of my stylesheet.
 
