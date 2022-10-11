@@ -16,7 +16,7 @@ function Book(title, author, pages, isRead) {
 }
 
 function addBookToLibrary() {
-    if (title.value === "" || author.value === "" || pages.value === "" || parseInt(pages.value) > 17868) return 
+    if ((title.value).trim() === "" || (author.value).trim() === "" || pages.value === "" || parseInt(pages.value) > 17868) return 
     myLibrary.push(new Book(title.value, author.value, pages.value, isRead.checked));
 
     createBookCardElement();
