@@ -8,11 +8,22 @@ const form = document.querySelector("form");
 
 let myLibrary = [];
 
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+
+    changeStatus() {
+        if (this.isRead === true) {
+            this.isRead = false;
+        }
+        else {
+            this.isRead = true;
+        }
+    }
 }
 
 function addBookToLibrary() {
@@ -124,16 +135,6 @@ function renameValuesOfBookStatus() {
 function renameBookStatusValue(bookObject) {
     if (bookObject.isRead === true) return "Read"
     return "Not read"
-}
-
-// Function on the prototype of every book object which changes the status of any book object
-Book.prototype.changeStatus = function() {
-    if (this.isRead === true) {
-        this.isRead = false;
-    }
-    else {
-        this.isRead = true;
-    }
 }
 
 // Add event listeners for buttons
